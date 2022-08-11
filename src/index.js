@@ -61,11 +61,7 @@ function decode(expr) {
     return el      
   })
   arr =  arr.map((el) => {
-      for (let key in MORSE_TABLE) {
-        if (key == el) {
-          el = MORSE_TABLE[key]
-        }
-      }
+    MORSE_TABLE[el] ? el = MORSE_TABLE[el]: ' '
     return el
     })
   return arr.join('')
